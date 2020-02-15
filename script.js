@@ -1,10 +1,12 @@
+import map from './map.js';
+
 window.onload = function () {
   var app = new Vue({
     el: '#game',
     data: {
       terminalInput: '',
-      state: 'state',
       feedback: 'feedback',
+      currentCoords: [0,0],
     },
     methods: {
 
@@ -30,6 +32,14 @@ window.onload = function () {
             // attack
             this.attack();
             break;
+          case 'exits':
+            // attack
+            this.showExits();
+            break;
+          case 'location':
+            // attack
+            this.showCurrentLocation();
+            break;
           default:
             // code block
             return;
@@ -41,26 +51,60 @@ window.onload = function () {
       },
 
       move: function() {
-        this.state = 'moving';
+
+        if (!this.hasExit()) {
+          this.feedback = 'No exit in that direction.';
+          return;
+        }
 
         var direction = '';
 
         switch(this.terminalInput) {
           case 'n':
-            direction = 'north';
+            // direction = 'north';
+            this.currentCoords[0] += 1;
             break;
           case 's':
-            direction = 'south';
+            // direction = 'south';
+            this.currentCoords[0] -= 1;
             break;
           case 'e':
-            direction = 'east';
+            // direction = 'east';
+            this.currentCoords[1] += 1;
             break;
           case 'w':
-            direction = 'west';
+            // direction = 'west';
+            this.currentCoords[1] -= 1;
             break;
         }
 
-        this.feedback = 'You have moved ' + direction;
+        this.checkLocation();
+      },
+
+      hasExit: function() {
+        let exits = map[this.currentCoords.toString()].exits;
+        console.log(exits);
+        if (exits.includes(this.terminalInput)) {
+          return true;
+        }
+      },
+
+      showExits: function() {
+        this.feedback = map[this.currentCoords.toString()].exits;
+      },
+
+      showCurrentLocation: function() {
+        this.feedback = map[this.currentCoords.toString()].name;
+      },
+
+      checkLocation: function() {
+
+        for (var coords in map) {
+
+          if (coords == this.currentCoords.toString()) {
+            this.feedback = 'You arrive at ' + map[coords].name;
+          }
+        }
       },
 
       attack: function() {

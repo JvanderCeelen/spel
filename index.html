@@ -6,15 +6,15 @@
 <link rel="stylesheet/less" type="text/css" href="style.less" />
 <script type="text/javascript" src="vue.js"></script>
 <script type="text/javascript" src="less.js"></script>
-<script type="text/javascript" src="script.js"></script>
+<script type="module" src="script.js"></script>
 
 </head>
 <body>
   <div id="game">
-    {{ state }}
     <input v-on:keyup.enter="procesTerminalInput" v-model="terminalInput" type="text">
     <div id="output">
       {{ feedback }}
+      {{ currentCoords }}
     </div>
   </div>
 </body>
