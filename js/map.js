@@ -5,21 +5,29 @@ var map = {
   '0,0': {
     name: 'start',
     exits: ['n','s','e','w'],
+    monsters: '',
+    description: 'test start',
   },
 
   '1,0': {
     name: 'road',
     exits: ['e','w'],
+    monsters: '',
+    description: 'test road1',
   },
 
   '2,0': {
     name: 'road',
     exits: ['e','w'],
+    monsters: '',
+    description: 'test road2',
   },
 
   '3,0': {
-    name: 'start',
+    name: 'ruin',
     exits: ['n','s','e','w'],
+    monsters: 'orc',
+    description: 'A very old ruin.',
   },
 
   '1,1': {

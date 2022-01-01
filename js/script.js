@@ -1,11 +1,12 @@
 import map from './map.js';
+import monsters from './monsters.js';
 
 window.onload = function () {
   var app = new Vue({
     el: '#game',
     data: {
       terminalInput: '',
-      feedback: 'feedback',
+      feedback: '',
       currentCoords: [0,0],
     },
     methods: {
@@ -40,6 +41,11 @@ window.onload = function () {
             // attack
             this.showCurrentLocation();
             break;
+          case 'l':
+          case 'look':
+            // attack
+            this.describeLocation();
+            break;
           default:
             // code block
             return;
@@ -53,7 +59,7 @@ window.onload = function () {
       move: function() {
 
         if (!this.hasExit()) {
-          this.feedback = 'No exit in that direction.';
+          this.setFeedback('No exit in that direction.');
           return;
         }
 
@@ -83,18 +89,18 @@ window.onload = function () {
 
       hasExit: function() {
         let exits = map[this.currentCoords.toString()].exits;
-        console.log(exits);
+
         if (exits.includes(this.terminalInput)) {
           return true;
         }
       },
 
       showExits: function() {
-        this.feedback = map[this.currentCoords.toString()].exits;
+        this.setFeedback(map[this.currentCoords.toString()].exits);
       },
 
       showCurrentLocation: function() {
-        this.feedback = map[this.currentCoords.toString()].name;
+        this.setFeedback(map[this.currentCoords.toString()].name);
       },
 
       checkLocation: function() {
@@ -102,13 +108,21 @@ window.onload = function () {
         for (var coords in map) {
 
           if (coords == this.currentCoords.toString()) {
-            this.feedback = 'You arrive at ' + map[coords].name;
+            this.setFeedback('You arrive at ' + map[coords].name);
           }
         }
       },
 
+      describeLocation: function() {
+        this.setFeedback(map[this.currentCoords].description);
+      },
+
+      setFeedback: function(feedback) {
+        this.feedback = '<span class="feedback">' + feedback + '</span>\n';
+      },
+
       attack: function() {
-        this.feedback = 'yaaaaaaaaaaaaaaaaaar';
+        this.setFeedback('yaaaaaaaaaaaaaaaaaar');
       },
     }
   })

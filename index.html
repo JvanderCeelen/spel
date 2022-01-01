@@ -4,18 +4,18 @@
 <meta charset="utf-8" />
 <title>Spel</title>
 <link rel="stylesheet/less" type="text/css" href="style.less" />
-<script type="text/javascript" src="vue.js"></script>
-<script type="text/javascript" src="less.js"></script>
-<script type="module" src="script.js"></script>
+<script type="text/javascript" src="js/vue.js"></script>
+<!-- <script type="text/javascript" src="js/less.js"></script> -->
+<script type="module" src="js/script.js"></script>
 
 </head>
 <body>
   <div id="game">
-    <input v-on:keyup.enter="procesTerminalInput" v-model="terminalInput" type="text">
     <div id="output">
-      {{ feedback }}
-      {{ currentCoords }}
+      <span v-html="feedback"></span>
     </div>
+    {{ currentCoords }}
+    <input v-on:keyup.enter="procesTerminalInput" v-model="terminalInput" type="text" autofocus/>
   </div>
 </body>
 </html>
