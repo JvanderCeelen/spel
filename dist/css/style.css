@@ -1,0 +1,13 @@
+body {
+  color: white;
+  background-color: teal;
+}
+
+#output {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 400px;
+  height: 400px;
+  color: #333;
+  background-color: white;
+}

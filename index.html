@@ -3,19 +3,11 @@
 <head>
 <meta charset="utf-8" />
 <title>Spel</title>
-<link rel="stylesheet/less" type="text/css" href="style.less" />
-<script type="text/javascript" src="js/vue.js"></script>
-<!-- <script type="text/javascript" src="js/less.js"></script> -->
-<script type="module" src="js/script.js"></script>
+<link rel="stylesheet" href="dist/css/style.css" />
+<script type="module" src="dist/js/script.js"></script>
 
 </head>
 <body>
-  <div id="game">
-    <div id="output">
-      <span v-html="feedback"></span>
-    </div>
-    {{ currentCoords }}
-    <input v-on:keyup.enter="procesTerminalInput" v-model="terminalInput" type="text" autofocus/>
-  </div>
+  <input type="text" autofocus/>
 </body>
 </html>
