@@ -1,13 +1,33 @@
+$unit: 12px;
+
+* {
+  box-sizing: border-box;
+}
+
 body {
+  padding: $unit * 2;
   color: white;
   background-color: teal;
 }
 
-#output {
+.main-wrapper {
+  width: 1280px;
+  height: 60vh;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.output-field {
   display: flex;
   flex-direction: column-reverse;
-  width: 400px;
-  height: 400px;
+  height: 100%;
+  padding: $unit;
   color: #333;
   background-color: white;
+}
+
+.input-field {
+  width: 100%;
+  margin-top: $unit * 2;
+  padding: $unit;
 }
