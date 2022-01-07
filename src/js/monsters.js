@@ -7,13 +7,15 @@ var monsters = {
     hp: 10,
     attack: 5,
     defense: 1,
+    agressive: 1
   },
 
   kobold: {
     exp: 150,
     hp: 20,
     attack: 4,
-    defense: 2
+    defense: 2,
+    agressive: 1
   },
 
   orc: {
@@ -21,6 +23,7 @@ var monsters = {
     hp: 40,
     attack: 10,
     defense: 4,
+    agressive: 1
   },
 
   satyr: {
@@ -28,6 +31,7 @@ var monsters = {
     hp: 30,
     attack: 6,
     defense: 2,
+    agressive: 1
   },
 
   troll: {
@@ -35,5 +39,6 @@ var monsters = {
     hp: 80,
     attack: 15,
     defense: 5,
+    agressive: 1
   },
 };

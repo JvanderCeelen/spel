@@ -64,7 +64,7 @@ window.onload = function () {
       return;
     }
 
-    var direction = '';
+    // let direction = '';
 
     switch(textInput) {
       case 'n':
@@ -86,6 +86,7 @@ window.onload = function () {
     }
 
     outputNewLocation();
+    checkForMonsters();
   }
 
   function hasExit(textInput) {
@@ -111,6 +112,16 @@ window.onload = function () {
       if (coords == currentCoords.toString()) {
         setFeedback('You arrive at ' + map[coords].name);
       }
+    }
+  }
+
+  function checkForMonsters() {
+
+    let monsters = map[currentCoords].monsters;
+    console.log(monsters);
+    // if there's one or more monsters
+    if (monsters.length) {
+      monsters.forEach( monster => attack());
     }
   }
 
