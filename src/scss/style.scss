@@ -1,5 +1,8 @@
+
+// Variables
 $unit: 12px;
 
+// Main
 * {
   box-sizing: border-box;
 }
@@ -7,7 +10,7 @@ $unit: 12px;
 body {
   padding: calc($unit * 2);
   color: white;
-  background-color: teal;
+  background-color: #a3bda7;
 }
 
 .main-wrapper {
@@ -17,6 +20,7 @@ body {
   margin: 0 auto;
 }
 
+// Output
 .output-field {
   display: flex;
   flex-direction: column;
@@ -39,8 +43,38 @@ body {
   }
 }
 
+// Input
 .input-field {
   width: 100%;
   margin-top: calc($unit * 2);
   padding: $unit;
+}
+
+// Health bars
+.health-bars {
+  display: flex;
+  justify-content: space-between;
+}
+
+.health-bar {
+  width: 300px;
+  height: 16px;
+  margin-top: calc($unit * 2);
+  background-color: white;
+
+  &--hero {
+
+    .health-bar--inner {
+      height: 100%;
+      background-color: green;
+    }
+  }
+
+  &--monster {
+
+    .health-bar--inner {
+      height: 100%;
+      background-color: red;
+    }
+  }
 }

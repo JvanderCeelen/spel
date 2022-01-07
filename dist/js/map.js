@@ -1,6 +1,6 @@
 export {map as default};
 
-var map = {
+let map = {
 
   '0,0': {
     name: 'start',
@@ -12,7 +12,7 @@ var map = {
   '1,0': {
     name: 'road',
     exits: ['e','w','s'],
-    monsters: ['orc','kobold'],
+    monsters: ['orc'],
     description: 'test road1',
   },
 

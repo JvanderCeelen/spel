@@ -5,7 +5,7 @@
 body {
   padding: 24px;
   color: white;
-  background-color: teal;
+  background-color: #a3bda7;
 }
 
 .main-wrapper {
@@ -38,4 +38,24 @@ body {
   width: 100%;
   margin-top: 24px;
   padding: 12px;
+}
+
+.health-bars {
+  display: flex;
+  justify-content: space-between;
+}
+
+.health-bar {
+  width: 300px;
+  height: 16px;
+  margin-top: 24px;
+  background-color: white;
+}
+.health-bar--hero .health-bar--inner {
+  height: 100%;
+  background-color: green;
+}
+.health-bar--monster .health-bar--inner {
+  height: 100%;
+  background-color: red;
 }
