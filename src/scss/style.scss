@@ -5,7 +5,7 @@ $unit: 12px;
 }
 
 body {
-  padding: $unit * 2;
+  padding: calc($unit * 2);
   color: white;
   background-color: teal;
 }
@@ -19,15 +19,28 @@ body {
 
 .output-field {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   height: 100%;
   padding: $unit;
-  color: #333;
   background-color: white;
+
+  > span {
+    padding: calc($unit / 2);
+    color: #333;
+
+    &:first-child {
+      margin-top: auto;
+    }
+
+    &:last-child {
+      font-size: 18px;
+      color: #000;
+    }
+  }
 }
 
 .input-field {
   width: 100%;
-  margin-top: $unit * 2;
+  margin-top: calc($unit * 2);
   padding: $unit;
 }

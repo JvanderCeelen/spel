@@ -10,11 +10,7 @@ window.onload = function () {
     procesInput(event.target.value);
   });
 
-    // data: {
-    //   textInput: '',
-    //   feedback: '',
-    //   currentCoords: [0,0],
-    // },
+  let currentCoords = [0,0];
 
   function procesInput(textInput) {
     handleInput(textInput);
@@ -31,7 +27,7 @@ window.onload = function () {
       case 'e':
       case 'w':
         // move
-        move(textInput)
+        move(textInput);
         break;
       case 'a':
       case 'attack':
@@ -63,7 +59,7 @@ window.onload = function () {
 
   function move(textInput) {
 
-    if (!hasExit()) {
+    if (!hasExit(textInput)) {
       setFeedback('No exit in that direction.');
       return;
     }
@@ -89,10 +85,10 @@ window.onload = function () {
         break;
     }
 
-    checkLocation();
+    outputNewLocation();
   }
 
-  function hasExit() {
+  function hasExit(textInput) {
     let exits = map[currentCoords.toString()].exits;
 
     if (exits.includes(textInput)) {
@@ -108,7 +104,7 @@ window.onload = function () {
     setFeedback(map[currentCoords.toString()].name);
   }
 
-  function checkLocation() {
+  function outputNewLocation() {
 
     for (var coords in map) {
 
@@ -123,7 +119,7 @@ window.onload = function () {
   }
 
   function setFeedback(feedback) {
-    feedback = '<span class="feedback">' + feedback + '</span>\n';
+    feedback = `<span>${ feedback }</span>\n`;
     outputElement.innerHTML += feedback;
   }
 

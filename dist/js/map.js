@@ -11,7 +11,7 @@ var map = {
 
   '1,0': {
     name: 'road',
-    exits: ['e','w'],
+    exits: ['e','w','s'],
     monsters: '',
     description: 'test road1',
   },
