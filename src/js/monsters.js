@@ -46,4 +46,22 @@ const monsters = {
     defense: 3,
     agressive: 1
   },
+
+  tree: {
+    name: 'Tree',
+    exp: 100,
+    hp: 100,
+    attack: 5,
+    defense: 5,
+    agressive: 0
+  },
+
+  flower: {
+    name: 'Flower',
+    exp: 10,
+    hp: 10,
+    attack: 0,
+    defense: 0,
+    agressive: 0
+  }
 };

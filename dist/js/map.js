@@ -12,7 +12,7 @@ let map = {
   '1,0': {
     name: 'road',
     exits: ['e','w','s'],
-    monsters: ['orc'],
+    monsters: ['tree'],
     description: 'test road1',
   },
 

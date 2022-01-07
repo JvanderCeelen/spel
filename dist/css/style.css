@@ -17,19 +17,17 @@ body {
 
 .output-field {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   height: 100%;
   padding: 12px;
   background-color: white;
+  overflow-y: scroll;
 }
 .output-field > span {
   padding: 6px;
   color: #333;
 }
 .output-field > span:first-child {
-  margin-top: auto;
-}
-.output-field > span:last-child {
   font-size: 18px;
   color: #000;
 }
