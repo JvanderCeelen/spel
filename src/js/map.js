@@ -3,10 +3,10 @@ export {map as default};
 let map = {
 
   '0,0': {
-    name: 'start',
+    name: 'The gate',
     exits: ['n','s','e','w'],
     monsters: [],
-    description: 'test start',
+    description: '',
   },
 
   '1,0': {

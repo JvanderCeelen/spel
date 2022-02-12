@@ -15,12 +15,21 @@ window.onload = function () {
   // Create a function with a promise that resolves after a timeout of x miliseconds.
   // This is used as a delay for the attack rounds.
   const timer = ms => new Promise(res => setTimeout(res, ms));
+  const lineHeight = 28.714285714;
+  const secPerLine = 0.5;
 
   inputElement.addEventListener('change', (event) => {
     procesInput(event.target.value);
   });
 
   let currentCoords = [0,0];
+
+  function intro() {
+    printStory('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', ['story']);
+  }
+
+  // call on load
+  intro();
 
   function procesInput(textInput) {
     handleInput(textInput);
@@ -141,11 +150,38 @@ window.onload = function () {
     printFeedback(map[currentCoords].description);
   }
 
-  function printFeedback(feedback) {
+  /**
+   * Print feedback to the window
+   * @param  {string} feedback - the text
+   * @param  {array} cssClass - list of classes to add to the span element
+   */
+  async function printFeedback(feedback, cssClass = false) {
     let span = document.createElement("span");
+    if (cssClass.length) cssClass.forEach( element => span.classList.add(element) )
     let text = document.createTextNode(feedback);
+
     span.appendChild(text);
     outputElement.prepend(span);
+  }
+
+  async function printStory(story, cssClass) {
+    inputElement.readOnly = true;
+    console.log(inputElement);
+    printFeedback(story, cssClass);
+
+    await timer(20);
+
+    let storyElement = document.querySelector('.story');
+    let duration = (storyElement.clientHeight / lineHeight) * secPerLine;
+
+    storyElement.classList.add('scroll-up');
+    storyElement.style.transitionDuration = `${duration}s`;
+
+    duration = Math.round(duration * 1000);
+
+    setTimeout( () => {
+      inputElement.readOnly = false
+    }, duration);
   }
 
   function attack(attacker, defender = hero) {

@@ -25,13 +25,26 @@ body {
   display: flex;
   flex-direction: column-reverse;
   height: 100%;
-  padding: $unit;
   background-color: white;
+  border: $unit solid white;
   overflow-y: scroll;
+  line-height: 1.5;
 
   > span {
     padding: calc($unit / 2);
     color: #333;
+
+    &.story {
+      width: 80%;
+      margin: 0 auto;
+      transform: translateY(100%);
+    }
+
+    &.scroll-up {
+      transform: translateY(0%);
+      transition-property: transform;
+      transition-timing-function: linear;
+    }
 
     &:first-child {
       font-size: 18px;
