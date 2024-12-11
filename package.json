@@ -4,7 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cleancss": "rm -rf dist/css/*",
+    "cleanjs": "rm -rf dist/js/*",
+    "cssdev": "npm run cleancss && sass --watch --update --style=expanded src/scss:dist/css",
+    "cssprod": "npm run cleancss && sass --no-source-map --stop-on-error --style=compressed src/scss:dist/css",
+    "prefix": "postcss dist/css/*.css --replace --use autoprefixer -b 'defaults' --no-map",
+    "jsdev": "npm run cleanjs && webpack --config webpack.config.js --mode development --watch",
+    "jsprod": "npm run cleanjs && webpack --config webpack.config.js --mode production",
+    "prod": "npm run cssprod && npm run prefix && npm run jsprod"
   },
   "repository": {
     "type": "git",
@@ -17,10 +24,12 @@
   },
   "homepage": "https://github.com/JvanderCeelen/spel#readme",
   "devDependencies": {
-    "del": "^6.0.0",
-    "gulp": "^4.0.2",
-    "gulp-rename": "^2.0.0",
-    "gulp-sass": "^5.1.0",
-    "sass": "^1.45.2"
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "postcss-cli": "^11.0.0",
+    "sass": "^1.82.0",
+    "terser-webpack-plugin": "^5.3.10",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^5.1.4"
   }
 }

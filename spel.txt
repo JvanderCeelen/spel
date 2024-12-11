@@ -1,0 +1,6 @@
+Spel:
+  - Je kan woorden van kracht vinden
+  - Ieder krachtwoord geeft je nieuwe krachten
+  - Muzieksuggesties voor bepaalde delen van het spel
+  - geen levels, maar hoe meer ervaring je op doet des te meer opties heb je als je met npc's praat
+  - 
