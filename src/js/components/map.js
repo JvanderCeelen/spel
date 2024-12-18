@@ -6,7 +6,7 @@ let map = {
     name: 'The gate',
     exits: ['n','s','e','w'],
     monsters: [],
-    description: '',
+    description: 'This, my friend, is a perfectly normal gate. The gate.',
   },
 
   '1,0': {

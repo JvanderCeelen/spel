@@ -1,90 +1,12 @@
+// Components
+@use 'components/attendees';
+@use 'components/button';
+@use 'components/dialog';
+@use 'components/input';
+@use 'components/list';
+@use 'components/main';
+@use 'components/menu';
+@use 'components/output';
 
-// Variables
-$unit: 12px;
-
-// Main
-* {
-  box-sizing: border-box;
-}
-
-body {
-  padding: calc($unit * 2);
-  color: white;
-  background-color: #a3bda7;
-}
-
-.main-wrapper {
-  width: 1280px;
-  height: 60vh;
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-// Output
-.output-field {
-  display: flex;
-  flex-direction: column-reverse;
-  height: 100%;
-  background-color: white;
-  border: $unit solid white;
-  overflow-y: scroll;
-  line-height: 1.5;
-
-  > span {
-    padding: calc($unit / 2);
-    color: #333;
-
-    &.story {
-      width: 80%;
-      margin: 0 auto;
-      transform: translateY(100%);
-    }
-
-    &.scroll-up {
-      transform: translateY(0%);
-      transition-property: transform;
-      transition-timing-function: linear;
-    }
-
-    &:first-child {
-      font-size: 18px;
-      color: #000;
-    }
-  }
-}
-
-// Input
-.input-field {
-  width: 100%;
-  margin-top: calc($unit * 2);
-  padding: $unit;
-}
-
-// Health bars
-.health-bars {
-  display: flex;
-  justify-content: space-between;
-}
-
-.health-bar {
-  width: 300px;
-  height: 16px;
-  margin-top: calc($unit * 2);
-  background-color: white;
-
-  &--hero {
-
-    .health-bar--inner {
-      height: 100%;
-      background-color: green;
-    }
-  }
-
-  &--monster {
-
-    .health-bar--inner {
-      height: 100%;
-      background-color: red;
-    }
-  }
-}
+// Helpers
+@use 'helper/flex';

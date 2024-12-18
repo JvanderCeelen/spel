@@ -1,0 +1,6 @@
+@use 'variables' as *;
+
+dialog {
+  padding: $unit calc($unit * 2);
+  border: 1px solid grey;
+}

@@ -1,0 +1,29 @@
+@use 'variables' as *;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: calc($unit * 2);
+  font-size: 1rem;
+  color: white;
+  background-color: $green;
+}
+
+dialog:focus {
+  outline: none;
+}
+
+.main-wrapper {
+  height: 100%;
+  max-width: 100%;
+}
+
+.input-output-wrapper {
+  width: 66vw;
+  height: 100%;
+}

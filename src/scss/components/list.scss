@@ -1,0 +1,11 @@
+@use 'variables' as *;
+
+ul, ol {
+  list-style: none;
+  margin: $unit 0;
+  padding: 0;
+}
+
+li ~ li {
+  margin-top: $unit;
+}

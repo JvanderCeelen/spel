@@ -1,0 +1,19 @@
+@use 'variables' as *;
+@use 'sass:color';
+
+button {
+  padding: $unit calc($unit * 2);
+  font-size: inherit;
+  color: #fff;
+  background-color: $brown;
+  border: 1px solid black;
+  cursor: pointer;
+  transition: background-color .2s ease-in-out;
+
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: underline;
+    background-color: color.adjust($brown, $lightness: -10%);
+  }
+}

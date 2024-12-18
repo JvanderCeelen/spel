@@ -1,6 +1,6 @@
-export {monsters as default};
+export {npcs as default};
 
-const monsters = {
+const npcs = {
 
   goblin: {
     name: 'Goblin',

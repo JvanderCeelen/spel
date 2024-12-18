@@ -3,21 +3,39 @@
 <head>
 <meta charset="utf-8" />
 <title>Spel</title>
+<link rel="shortcut icon" href="#">
 <link rel="stylesheet" href="dist/css/style.css" />
-<script type="module" src="dist/js/script.js"></script>
+<script type="module" src="dist/js/script.js" defer></script>
 
 </head>
 <body>
-  <div class="main-wrapper">
-    <div class="output-field"></div>
-    <input class="input-field" type="text" autofocus />
-    <div class="health-bars">
-      <div class="health-bar health-bar--hero">
-        <div class="health-bar--inner"></div>
-      </div>
-      <div class="health-bar health-bar--monster">
-        <div class="health-bar--inner"></div>
-      </div>
+  <dialog class="c-menu">
+    <nav>
+      <ul>
+        <li><button data-function="new">New game</button></li>
+        <li><button data-function="load">Load</button></li>
+        <li><button data-function="save">Save</button></li>
+        <li><button data-function="quit">Quit</button></li>
+      </ul>
+    </nav>
+  </dialog>
+
+  <dialog class="c-menu c-menu--new-game">
+    <nav>
+      <ul>
+      </ul>
+    </nav>
+  </dialog>
+
+  <div class="main-wrapper h-flex">
+    <div class="input-output-wrapper h-flex h-flex-direction-column">
+      <div class="output-field"></div>
+      <input class="input-field" type="text" />
+    </div>
+    <div class="attendees-wrapper">
+      <ul class="attendees">
+
+      </ul>
     </div>
   </div>
 </body>

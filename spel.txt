@@ -1,6 +1,13 @@
 Spel:
   - Je kan woorden van kracht vinden
-  - Ieder krachtwoord geeft je nieuwe krachten
+  - Ieder krachtwoord geeft je nieuwe spells
   - Muzieksuggesties voor bepaalde delen van het spel
   - geen levels, maar hoe meer ervaring je op doet des te meer opties heb je als je met npc's praat
-  - 
+  - cutscenes - scrollende tekst met een beschrijving van het boek bij sommige plekken
+  - een map als modal die steeds verder ontdekt kan worden
+    - in en uitzoomen
+    - bij een plaats of een huis / kasteel ontstaat er een nieuwe map
+  - een lijst met mensen als je op een plek aankomt
+  - als een toveraar de ambiance kan lezen, af en toe een ping of een ripple waar er kracht wordt gebruikt
+  - krachtwoorden hebben een willekeurige kracht
+  - legenda met opties

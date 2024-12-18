@@ -1,0 +1,10 @@
+@use 'variables' as *;
+
+.attendees {
+  width: 33vw;
+  height: 100%;
+  margin: 0 0 0 calc($unit * 2);
+  padding: $unit;
+  list-style: none;
+  background-color: #fff;
+}
